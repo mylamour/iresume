@@ -15,16 +15,9 @@ var term = $('.content').terminal({
         term.echo(cmdlist)
     },
     less: function (url) {
-        // document.getElementById("greeting").style.display="None";     
         try {
             var ext = url.match(/\.([^.]+)$/)[1];
         } catch (e) { }
-        var languages = {
-            js: 'javascript',
-            css: 'css',
-            py: 'python'
-        };
-        var language = languages[ext];
         $.get(url).then(function (file) {
                 term.less(file);
         });
@@ -65,8 +58,8 @@ var term = $('.content').terminal({
     });
 
 function show() {
-    document.getElementById("greeting").style.display="None";         
     term.push(function (command) {
+        document.getElementById("greeting").style.display="None";             
         if (command.match(/^y$/i)) {
             profiles = {
                 "name": "mour",
@@ -97,10 +90,10 @@ function show() {
         }
     }, {
             prompt: 'Do you want to know who am i (y|n): '
-        });
+        });        
 }
 term.history().disable();
-show();
+show();       
 
 
 //code from https://code.sololearn.com/Wj7ZWBg5m2OG/#html
