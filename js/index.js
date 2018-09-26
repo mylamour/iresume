@@ -5,7 +5,7 @@ var shell = $('.shell').resizable({
     handle: '> .status-bar .title'
 });
 
-var cmdlist = ['ls', 'less', 'cat', 'help', 'whoami', 'resume','logo']
+var cmdlist = ['ls', 'less', 'cat', 'help', 'whoami', 'resume']
 var dircontent = ['readme.md']
 var readme = "Hi, guys, welcome to my little secret place. i make it use juqery.terminal. and this is static website, so this file readme.md is not exist actually. it only few line string here. As for me, i am learning programing since 5 years ago, when i was go to college. I always have a greate passions to new things. i try to play hacking, programing, reading. and others, also i am writing it in my blog, gitbook. and all above this, it;s just for fun. Hope you would found your interesting things. And have a nice day"
 
@@ -15,7 +15,7 @@ var term = $('.content').terminal({
         term.echo(cmdlist)
     },
     less: function (url) {
-        document.getElementById("greeting").style.display="None";        
+        // document.getElementById("greeting").style.display="None";     
         try {
             var ext = url.match(/\.([^.]+)$/)[1];
         } catch (e) { }
@@ -53,10 +53,10 @@ var term = $('.content').terminal({
     //         term.echo("Echo echo echo ....")
     //     }
     // },
-    logo: function(){
-        document.getElementById("greeting").style.display="Inherit";        
+    // logo: function(){
+    //     document.getElementById("greeting").style.display="Inherit";        
         
-    },
+    // },
 },
 
     {
@@ -65,6 +65,7 @@ var term = $('.content').terminal({
     });
 
 function show() {
+    document.getElementById("greeting").style.display="None";         
     term.push(function (command) {
         if (command.match(/^y$/i)) {
             profiles = {
