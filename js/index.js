@@ -5,10 +5,9 @@ var shell = $('.shell').resizable({
     handle: '> .status-bar .title'
 });
 
-var cmdlist = ['ls', 'less', 'cat', 'help', 'whoami', 'resume']
-var dircontent = ['readme.md']
+var cmdlist = ['ls', 'less', 'cd', 'cat', 'help', 'whoami', 'resume', 'echo', 'exit']
+var dircontent = ['readme.md', 'blog']
 var readme = "Hi, guys, welcome to my little secret place. i make it use juqery.terminal. and this is static website, so this file readme.md is not exist actually. it only few line string here. As for me, i am learning programing since 5 years ago, when i was go to college. I always have a greate passions to new things. i try to play hacking, programing, reading. and others, also i am writing it in my blog, gitbook. and all above this, it;s just for fun. Hope you would found your interesting things. And have a nice day"
-
 
 var term = $('.content').terminal({
     help: function () {
@@ -19,7 +18,7 @@ var term = $('.content').terminal({
             var ext = url.match(/\.([^.]+)$/)[1];
         } catch (e) { }
         $.get(url).then(function (file) {
-                term.less(file);
+            term.less(file);
         });
     },
     resume: function () {
@@ -29,26 +28,51 @@ var term = $('.content').terminal({
         term.echo("mour");
     },
     ls: function () {
-        term.echo(dircontent);
+        var prompt = term.get_prompt();
+        if (prompt == "i@mour: root/blog $ ") {
+            term.echo("index.html")
+        } else {
+            term.echo(dircontent);
+        }
+    },
+    cd: function (path) {
+        var prompt = term.get_prompt();
+        if (path == "blog") {
+            term.set_prompt("i@mour: root/blog $ ")
+        } else if (path === "..") {
+            term.set_prompt("i@mour:$ ")
+            var np = prompt.split()
+        } else if (path == ".") {
+            term.echo("")
+        }else {
+            term.echo(path + " is not directory")
+        }
     },
     cat: function (fname) {
         if (fname == "readme.md") {
             term.echo(readme)
+        } else if (fname == "index.html" || fname == "blog/index.html") {
+            term.echo("Now you would redirect to blog homepage");
+            window.location.href = "https://iami.xyz";
         } else {
             term.echo("cat: " + fname + ": No such file or directory")
         }
     },
-    // echo: function(args){
-    // how to support mutliple args
-    //     if (fcon) {
-    //         term.echo(fcon)
+    exit: function () {
+        window.location.href = "about:blank";
+        window.close();
+    },
+    // echo: function(){
+    // // how to support mutliple args
+    //     if (args) {
+    //         this.echo(arguments)
     //     } else {
     //         term.echo("Echo echo echo ....")
     //     }
     // },
     // logo: function(){
     //     document.getElementById("greeting").style.display="Inherit";        
-        
+
     // },
 },
 
@@ -59,7 +83,7 @@ var term = $('.content').terminal({
 
 function show() {
     term.push(function (command) {
-        document.getElementById("greeting").style.display="None";             
+        document.getElementById("greeting").style.display = "None";
         if (command.match(/^y$/i)) {
             profiles = {
                 "name": "mour",
@@ -90,10 +114,10 @@ function show() {
         }
     }, {
             prompt: 'Do you want to know who am i (y|n): '
-        });        
+        });
 }
 term.history().disable();
-show();       
+show();
 
 
 //code from https://code.sololearn.com/Wj7ZWBg5m2OG/#html
