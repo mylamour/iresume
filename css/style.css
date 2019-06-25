@@ -1,4 +1,8 @@
+pre{
+    /* overflow: hidden; */
+    overflow-x: hidden;
 
+}
 .outer {
     display: table;
     position: absolute;
@@ -12,8 +16,8 @@
 }
 
 .inner {
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto; */
+    margin-right: 100px;
     width: 600px;
 }
 
@@ -95,4 +99,35 @@ body .shell {
 .terminal > .resizer, .terminal > .font .resizer {
     visibility: visible;
     pointer-events: none;
+}
+
+.leftinfo{
+    background-color: #292929;
+    width: 300px;
+    height: 500px;
+    /* display: table-cell; */
+    margin-top: 150px;
+    position: relative;
+    margin-left: 30px;
+    border-radius: 3%;
+    border:2px solid #003e00;
+
+}
+
+.rightinfo{
+    background-color: #292929;
+    width: 300px;
+    height: 500px;
+    /* display: table-cell; */
+    margin-top: 150px;
+    position: relative;
+    margin-left: -200px;
+    border-radius: 3%;
+    border:2px solid #003e00;
+
+}
+
+.infofiled{
+    font-size: 13px;
+    color: aqua;
 }

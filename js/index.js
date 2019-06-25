@@ -5,10 +5,21 @@ var shell = $('.shell').resizable({
     handle: '> .status-bar .title'
 });
 
-var cmdlist = ['ls', 'less', 'cd', 'cat', 'help', 'whoami', 'resume', 'echo', 'exit']
+var cmdlist = ['ls', 'less', 'cd', 'cat', 'help', 'whoami', 'resume', 'echo', 'exit','banner']
 var dircontent = ['readme.md', 'blog']
+var ibanner =      `
+              ______ ______
+            _/      Y      \_
+           // ~~ ~~ | ~~ ~  \\
+          // ~ ~ ~~ | ~~~ ~~ \\      Knowledge is power
+         //________.|.________\\     The more you know, the less you know.
+        '----------'-'----------'  
+        `
 
 var term = $('.content').terminal({
+    banner: function(){
+        term.echo(ibanner)
+    },
     help: function () {
         term.echo(cmdlist)
     },
@@ -52,10 +63,14 @@ var term = $('.content').terminal({
             term.echo(readme)
         } else if (fname == "index.html" || fname == "blog/index.html") {
             term.echo("Now you would redirect to blog homepage");
+ 
             window.location.href = "https://iami.xyz";
         } else {
             term.echo("cat: " + fname + ": No such file or directory")
         }
+    },
+    echo: function(whatever){
+        term.echo(whatever)
     },
     exit: function () {
         window.location.href = "about:blank";
@@ -81,10 +96,10 @@ var term = $('.content').terminal({
     });
 
 function show() {
+
     term.push(function (command) {
-        document.getElementById("greeting").style.display = "None";
         if (command.match(/^y$/i)) {
-            
+            document.getElementById("wocece").style.display = "None";
             var whoami = Object.keys(profiles).map(function (key) {
                 var value = profiles[key];
                 return '[[b;#fff;]' + key + ']: ' + '[[;springgreen;]' + value + ']';
@@ -104,6 +119,7 @@ function show() {
         }
     }, {
             prompt: 'Do you want to know who am i (y|n): '
+
         });
 }
 term.history().disable();
@@ -119,7 +135,7 @@ c.height = window.innerHeight;
 c.width = window.innerWidth;
 
 //chinese characters - taken from the unicode charset
-var matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%";
+var matrix = "who are u, I am here waiting for u@#$%^&*()*&^%我们永不止步，追求更强的自己.不敢高声语，恐惊天上人";
 //converting the string into an array of single characters
 matrix = matrix.split("");
 
