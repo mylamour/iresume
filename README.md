@@ -4,5 +4,5 @@ Just change `js/resume.js` to make yourself resume.   Also it's good way to use 
 
 
 
-![h](https://user-images.githubusercontent.com/12653147/46087876-cf05d800-c1dd-11e8-942d-dcd6a27b15e8.gif)
+![image](https://user-images.githubusercontent.com/12653147/60147696-0bb03f80-9801-11e9-8c5e-10b2be3da3ea.png)
 
