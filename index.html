@@ -10,10 +10,12 @@
 </head>
 
 <body>
+        <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
     <div class="outer">
         <div class="middle">
             <div class="inner">
-            <pre id="intro" class="resume" role="log" style="background-color: #292929">
+                <button id="switch", class="switch" , onclick="change()">EN/中文</button>
+                <pre id="en" class="resume" role="log" style="background-color: #292929">
                                 ______ ______
                               _/      Y      \_
                              // ~~ ~~ | ~~ ~  \\
@@ -28,7 +30,11 @@
     mail: mour[at]iami.xyz
     blog: https://iami.xyz
     github: https://github.com/mylamour
-
+    status: Senoir Information Security Engineer At Alibaba Group
+    exprience: 
+    * working exprience 3 years
+    * information security about 7 years
+    
 ------------------------------------------------------------------------------
 
     I am a security expert and with great passion in new things. Always keep 
@@ -47,10 +53,6 @@
     * SHELL
     * JAVASCRIPT
     * GOLANG ...
-    status: Senoir Information Security Engineer At Alibaba Group
-    exprience: 
-    * working exprience 3 years
-    * information security about 7 years
 
 ------------------------------------------------------------------------------
 ------------------------------------------------------------------------------
@@ -64,9 +66,10 @@
         * Threat Intelligence Spider
         * Outgoing Traffic Monitoring
         * Anti-Intrusions
+        * Data Analysis 
 
     2 Presentation
-        NCWU University:
+        NCWU University
         Anti-Intrusions & Career planning
         ZZU University
         Intrusions Detection
@@ -91,9 +94,137 @@
                                 ├┤ │││ ││
                                 └─┘┘└┘─┴┘
             </pre>
+                <pre id="cn" class="resume" role="log" style="background-color: #292929; display: none;">
+                                ______ ______
+                              _/      Y      \_
+                             // ~~ ~~ | ~~ ~  \\
+                            // ~ ~ ~~ | ~~~ ~~ \\      
+                           //________.|.________\\     
+                          '----------'-'----------'                                     
+                              Knowledge is 力量
+                    The more you know, the less you know.
+------------------------------------------------------------------------------
+
+    花名: 放之
+    邮箱: mour[at]iami.xyz
+    博客: https://iami.xyz
+    github: https://github.com/mylamour
+    工作状态: 高级信息安全工程师@阿里巴巴集团
+    工作经验: 
+     * 3年从业经验
+     * 7年信息安全经验
+------------------------------------------------------------------------------
+
+    加入阿里本地生活以来分别经历了反入侵运营，基础安全建设，集团赋能，数字化运营等项目，
+    分别针对饿了么+星选（前百度外卖）进行安全建设，目前仍在建设阿里巴巴本地生活反入侵
+    体系。同时针对投后企业进行赋能，以及口碑的部分安全问题。
+
+------------------------------------------------------------------------------
+
+    技能树: 
+     * 安全架构
+     * 反入侵体系建设
+     * 企业安全建设
+     * 数据安全
+     * 数据分析
+     * 安全研发
+     * Web安全
+     * SDL
+    编程语言: 
+     * PYTHON
+     * SHELL
+     * JAVASCRIPT
+     * GOLANG ...
+
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+    # 最近工作内容
+    1. 阿里巴巴集团（201810-Now)
+     * 基础安全建设以及反入侵建设
+       阿里巴巴本地生活的基础安全防护建设，风险点治理、运营，办公网/生产网反入侵建设
+       相关工作(入侵检测策略编写，标准接入方案，白盒扫描，办公网套件自动推送等等)。
+       以及针对投后企业赋能，比如口碑收购的客如云，对客如云进行基础安全防护。
+     * 数字化运营
+       各品类类数据收集，分别进行实时/离线存储以及进行在线/离线分析，同时输出可视化
+       报表以及告警通知。
+     * 威胁情报源抓取并补充检测规则
+       爬取威胁列表（除了公共列表之外还有一些黑卡平台，代理ip）并基于yaml格式自动生
+       成检测平台的规则。
+     * 生产网主动出网外联检测
+     * 卡发布白盒扫描系统
+       订阅饿了么不同环境发布系统消息推送集团至扫描平台得到扫描结果以便应用安全同学
+       进行跟进以及及时止损。
+     * 参加阿里护网
+       本地生活反入侵应急响应，溯源分析，日志分析等，与所有小CRO线的反入侵同学共同
+       防御针对的阿里护网攻击
+
+    2. BTCC
+     * 安全架构设计
+       基于AWS进行扫描加固，并设计交易所安全架构，同时交付方案给韩国BTCC团队。
+     * 入侵检测平台设计
+     * 跨区多钱包节点自动部署（IAC能够帮助Devops更友善部署以及加固基础设施)
+     * 进行内部渗透测试以及对接乙方进行二次渗透
+     * 推动内网安全改进
+       进行了一次内网渗透，推动IT独立内网，分别将矿池、钱包、交易所的内网隔离，启用
+       日志记录，安全培训等。
+     * 前后端加签验签方案原型实现以及交付
+     * 办公网自助接入方案
+     * 应急响应以及漏洞复现
+       将外部上报的威胁进行分类分级，复现定赏金。针对突发情况进行响应
+     * 推动交易所研发SDL落地
+       参与场外交易的产品的安全架构评审，集团其他的几个安全系统的安全评审，向研发提
+       供安全研发checklist等
+     * 基于K8S的架构迁移
+       失败。原型已经跑通，但由于后端团队基本离职以及BTCC上海面临解体。导致无下文，
+       本人亦随即离职。
+
+     其他
+     * 阿里云第三届云安全算法Team No.9
+     * SDLChina初期主要维护者
+    
+    3. 弘连科技
+     * Webshell检测研发
+       采用Yara规则匹配，ssdeep模糊哈希计算，以及TextCNN文本分类。申请MISP威胁
+       列表会员，当时应该是国内第二家加入的。后面微步在线也加入了。
+     * APT通用检测框架
+       跨平台框架抽取，window下抽取wmi和注册表，并采用插件化架构进行检测
+     * 进行内存取证，以及接触硬件LAN Tutrle设备
+     * 支持网安渗透测试
+
+
+    演讲
+        零号俱乐部/豌豆科技: 浅谈反入侵
+        四叶草校园安全行-郑州大学: 反入侵建设与入侵检测
+        四叶草校园安全行-华北水利水电大学: 反入侵建设与职业选择
+        BTCC: 内网安全培训
+        弘连科技: 机器学习入门
+
+    其他
+        * Nginx日志Fuzz
+        * 告警聚类
+        * DGA域名分类
+        * 基于golang的爆破工具
+        * 多规则校验检测工具
+        * 自动化批量算法在数据集上验证工具
+        * 一个实用的Chrome插件
+
+------------------------------------------------------------------------------
+
+    A wise man will not make himself into a mere machine fit only to do one 
+    kind of work. So, Just Keep Learning & Keep Doing
+
+------------------------------------------------------------------------------
+                                ┌─┐┌┐┌┌┬┐
+                                ├┤ │││ ││
+                                └─┘┘└┘─┴┘
+            </pre>
+
             </div>
         </div>
     </div>
+        <canvas id="clock" width="500" height="500" >cccc</canvas>
 </body>
+
+<script src="./js/index.js"></script>
 
 </html>
